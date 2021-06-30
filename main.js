@@ -23,7 +23,7 @@ function add() {
     rover_img.src = car_image;
 
     rover_img1 = new Image();
-    rover_img1.onload = upload_rover2;
+    rover_img1.onload = upload_rover_2;
     rover_img1.src = car2_image;
 
     
@@ -38,7 +38,7 @@ function upload_rover() {
     ctx.drawImage(rover_img, car_x, car_y, car_width, car_height);
 }
 
-function upload_rover2() {
+function upload_rover_2() {
     ctx.drawImage(rover_img1, car2_x, car2_y, car_width, car_height);
 }
 
@@ -50,25 +50,25 @@ function my_keydown(e) {
 
     if(keyPressed == '38')
     {
-        car1_up();
+        up();
         console.log("up");
     }
 
     if(keyPressed == '37')
     {
-        car1_left();
+        left();
         console.log("left");
     }
 
     if(keyPressed == '40')
     {
-        car1_down();
+        down();
         console.log("down");
     }
 
     if(keyPressed == '39')
     {
-        car1_right();
+        right();
         console.log("right");
     }
 
@@ -88,4 +88,85 @@ function my_keydown(e) {
             c2_left();
              console.log("key A");
              }
+}
+
+function up() {
+    if (car_y >= 0 ) {
+        car_y = car_y - 10;
+        console.log("when up arrow is pressed, x ="+ car_x  +" and y =" + car_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+function down() {
+    if (car_y <= 500) {
+        car_y = car_y + 10;
+        console.log("when down arrow is pressed, x ="+ car_x + " and y =" + car_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+function left() {
+    if (car_x >= 0 ) {
+        car_x = car_x - 10;
+        console.log("when left arrow is pressed, x ="+ car_x + " and y =" + car_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+function right() {
+    if (car_x<= 700 ) {
+        car_x = car_x + 10;
+        console.log("when right arrow is pressed, x ="+ car_x + " and y =" + car_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+
+function c2_up() {
+    if (car2_y >= 0 ) {
+        car2_y = car2_y - 10;
+        console.log("when up arrow is pressed, x ="+ car2_x + " and y =" + car2_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+function c2_down() {
+    if (car2_y <= 500) {
+        car2_y = car2_y + 10;
+        console.log("when down arrow is pressed, x ="+ car2_x + " and y =" + car2_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+function c2_left() {
+    if (car2_x >= 0 ) {
+        car2_x = car2_x - 10;
+        console.log("when left arrow is pressed, x ="+ car2_x + " and y =" + car2_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
+}
+
+function c2_right() {
+    if (car2_x<= 700 ) {
+        car2_x = car2_x + 10;
+        console.log("when right arrow is pressed, x ="+ car2_x + " and y =" + car2_y);
+        upload_bg();
+        upload_rover();
+        upload_rover_2();
+    }
 }
